@@ -98,3 +98,77 @@ for (let key in filha2) { // uso do for para percorrer em todas as chaves do ele
 
 
 // Aula herença #04 
+function MeuObjeto() {}
+console.log(MeuObjeto.prototype)
+
+let obj1 = new MeuObjeto
+let obj2 = new MeuObjeto
+console.log('\nexibindo obj1:', obj1)
+console.log('exibindo obj2:', obj2)
+
+console.log(obj1.__proto__ === obj2.__proto__)
+console.log(MeuObjeto.prototype === obj2.__proto__)
+
+MeuObjeto.prototype.nome = 'Anônimo'
+MeuObjeto.prototype.falar = function() {
+    console.log(`Bom dia! Meu nome é ${this.nome}`)
+}
+
+obj2.nome = 'André'
+obj1.falar()
+obj2.falar()
+
+obj1.falar = function() {
+    console.log(`Bom dia!`)
+} // sobrescreve a função falar no obj1
+
+obj1.falar()
+
+
+// Aula herença #05
+console.log('\n'+ typeof String)
+console.log(typeof Array)
+console.log(typeof Object)
+
+String.prototype.reverse = function() {
+    return this.split('').reverse().join('')
+}
+
+console.log('Escola'.reverse())
+
+Array.prototype.first = function() {
+    return this[0]
+}
+
+console.log([1,2,3,4,5].first())
+
+String.prototype.toString = function() {
+    return 'lascou tudo'
+}
+
+console.log('Escola'.reverse())
+
+
+// Aula herença #06
+function Aula(nome, videoID) {
+    this.nome = nome
+    this.videoID = videoID
+}
+
+const aula1 = new Aula('Bem vindo', 123)
+const aula2 = new Aula('Até breve', 456)
+
+console.log(aula1, aula2)
+
+// simulando o new
+function novo(f, ...params) {
+    const obj = {}
+    obj.__proto__ = f.prototype
+    f.apply(obj, params)
+    return obj
+}
+
+const aula3 = novo(Aula, 'Bem vindo', 123)
+const aula4 = novo(Aula, 'Até bre', 456)
+
+console.log(aula3, aula4)
