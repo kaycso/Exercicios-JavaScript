@@ -1,0 +1,3 @@
+- Criar uma função que recebe o idade de uma pessoa e retorna a mesma em dias. Deve-se considerar os anos bissextos e a quantidade de dias decorridos desde o ultimo aniversário
+- refazer a função de removerPropriedade
+- fazer 'nomeDoMes.js'
