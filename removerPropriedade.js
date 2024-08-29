@@ -14,3 +14,9 @@ console.log(removerPropriedade(objeto, 'b'))
 console.log(removerPropriedade(objeto2, 'valor'))
 console.log(Object.is(removerPropriedade(objeto2, 'valor'), objeto2))
 console.log(objeto2)
+
+const removeProperty = (objeto, propriedade) => {
+    delete objeto[propriedade]
+    return objeto
+}
+console.log(removeProperty({a: 1, b: 2}, 'a'))
