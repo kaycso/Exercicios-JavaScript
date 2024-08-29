@@ -9,3 +9,10 @@ function contarCaracteres(caracter, frase) {
 }
 
 console.log(contarCaracteres('A', 'A maria'))
+
+// Outra forma de fazer
+const contarCaracter = (caracter, frase) => {
+    return frase.split('').filter(e => e === caracter).length
+}
+
+console.log(contarCaracter('A', 'A mAria'))

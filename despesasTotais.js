@@ -1,11 +1,5 @@
 function despesasTotais(listaDespesas) {
-    let soma = 0
-
-    for (let i = 0; i < listaDespesas.length; i++) {
-        soma = soma + listaDespesas[i].preco
-    }
-
-    return soma
+    return listaDespesas.map(objeto => objeto.preco).reduce((despesaAnterior, despesaAtual) => despesaAnterior + despesaAtual)
 }
 
 console.log(despesasTotais([

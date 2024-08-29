@@ -11,3 +11,9 @@ function menorNumero(lista){
 }
 
 console.log(menorNumero([1,3,4,5,6,4,2]))
+
+// Outra forma
+
+const menor = (lista) => lista.reduce((elementoAnterior, proximoElemento) => elementoAnterior < proximoElemento ? elementoAnterior : proximoElemento)
+
+console.log(menor([-2,3,4,5,6,4,1]))
